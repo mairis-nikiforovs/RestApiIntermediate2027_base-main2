@@ -27,7 +27,11 @@ jobs:
         run: npm install
 
       - name: Run restaurant script
-        run: TOKEN_STG=${{ secrets.X_API_KEY }} npm run restaurant
+        env:
+          HOST_STG: ${{ secrets.HOST_STG }}
+          TOKEN_STG: ${{ secrets.TOKEN_STG }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: npm run restaurant
 
       - name: Rename main HTML report to index.html
         run: mv mochawesome-report/mochawesome.html mochawesome-report/index.html
