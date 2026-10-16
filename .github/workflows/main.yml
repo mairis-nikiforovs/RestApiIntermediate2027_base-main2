@@ -43,6 +43,7 @@ jobs:
 
   deploy:
     needs: build
+    if: always()
     runs-on: local
     environment:
       name: github-pages
