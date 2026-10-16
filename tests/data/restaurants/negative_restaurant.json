@@ -1,0 +1,22 @@
+[
+    {
+        "requestBody": {
+            "name": "Restaurants name from json file"
+        },
+        "testCaseName": "Negative - create restaurant with no description",
+        "expectedStatusCode": 400,
+        "expectedMessage": "Restaurant validation failed: description: Path `description` is required."
+    },
+    {
+        "requestBody": {
+            "description": "Restaurants description from json file"
+        },
+        "testCaseName": "Negative - create restaurant with no name",
+        "expectedStatusCode": 400,
+        "expectedMessage": "Restaurant validation failed: name: Path `name` is required."
+    }
+]
+
+
+
+
